@@ -1,0 +1,4 @@
+{
+  "model_inf": "from:0 to:1 operator:identity  from:1 to:2 operator:identity  from:2 to:3 operator:identity  from:2 to:6 operator:PReLU  from:2 to:9 operator:identity  from:3 to:4 operator:PReLU  from:3 to:5 operator:PReLU  from:4 to:5 operator:identity  from:4 to:9 operator:PReLU  from:5 to:6 operator:PReLU  from:6 to:7 operator:identity  from:7 to:8 operator:identity  from:8 to:9 operator:ReLU  ",
+  "error_message": "Got unsupported ScalarType BFloat16"
+}

@@ -1,0 +1,4 @@
+{
+  "model_inf": "from:0 to:1 operator:reducemean  from:0 to:9 operator:identity  from:1 to:2 operator:identity  from:2 to:3 operator:ELU  from:3 to:4 operator:identity  from:3 to:6 operator:PReLU  from:4 to:5 operator:identity  from:5 to:6 operator:identity  from:5 to:7 operator:PReLU  from:6 to:7 operator:identity  from:7 to:8 operator:identity  from:8 to:9 operator:identity  ",
+  "error_message": "Sizes of tensors must match except in dimension 1. Expected size 48 but got size 1 for tensor number 1 in the list."
+}

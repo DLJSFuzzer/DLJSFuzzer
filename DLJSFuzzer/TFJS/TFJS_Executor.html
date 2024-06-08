@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.js"></script>
+
+    <script lang="js">
+        async function GetInput(url, config){
+            return axios.get(url, config);
+            console.log(url);
+            console.log(config);
+        }
+
+        async function SendOutput(url, data, config){
+            return axios.post(url, data, config);
+        }
+
+        function input_copy(Shape, Input, source){
+            for (let index = 0; index < source['Shape'].length; index++){
+                let num = JSON.parse(JSON.stringify(source['Shape'][index]));
+                Shape.push(num);
+            }
+            for (let index = 0; index < source['Input'].length; index++){
+                let num = JSON.parse(JSON.stringify(source['Input'][index]));
+                Input.push(num);
+            }
+            Model_Url = source['Model_Url'];
+        }
+
+        function json_transfer(output_content){
+
+            var count = 0;
+            if (output_content.length % save_size === 0){
+                count = parseInt(output_content.length / save_size);
+            }
+            else{
+                count = parseInt(output_content.length / save_size) + 1;
+            }
+
+            let post_body = {
+                ret_type: 'tensor',
+                files_total: count
+            };
+
+            SendOutput(push_url, post_body, config);
+
+            for (let i = 0; i < count - 1; i++){
+                var this_content = output_content.slice(0, save_size);
+                let data = {
+                    content: this_content
+                }
+                var js_content = JSON.stringify(data)
+                var blob = new Blob([js_content], {type: "text/plain;charset=utf-8"});
+                var json_name = "output_save" + String(i + 1) + ".json";
+                saveAs(blob, json_name);
+
+                output_content = output_content.slice(save_size)
+            }
+
+            let data = {
+                content: output_content
+            }
+            js_content = JSON.stringify(data)
+            blob = new Blob([js_content], {type: "text/plain;charset=utf-8"});
+            json_name = "output_save" + String(count) + ".json";
+            saveAs(blob, json_name);
+
+        }
+
+        async function execute_model(model_url, input_tensor){
+
+            try{
+                // const tidy = tf.tidy(()=>{
+                //     console.log("tfjs_chrome_ready");
+                // });
+                const model = await tf.loadGraphModel(model_url);
+                const output_tensor = model.predict(input_tensor);
+                // xs.dataSync() 将张量直接转为一维数组
+                let output_content = output_tensor.dataSync();
+                let output_shape = output_tensor.shape;
+
+                // //保存为JSON文件传回，这样能比http请求更快
+                json_transfer(output_content);
+            }
+            catch (err){
+                console.log(err.stack)
+                post_body = {
+                    ret_type: 'error',
+                    err_msg: err.stack
+                }
+                SendOutput(push_url, post_body, config);
+            }
+        }
+
+
+        const config = {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        };
+
+        const get_url = "http://127.0.0.1:5000/getInput";
+        const push_url = "http://127.0.0.1:5000/sendOutput";
+        //每一次post传递多少个数据
+        const save_size = 2000000;
+
+        var Input = [];
+        var Shape = [];
+        var Model_Url = "";
+        var out = [];
+        var content = [];
+        var InputReq = GetInput(get_url, config);
+        InputReq.then(
+            result => {
+                input_copy(Shape, Input, result.data);
+                try {
+                    var xs = tf.tensor4d(Input, Shape);
+                    execute_model(Model_Url, xs).then(() => {
+                        console.log("ok");
+                    })
+                }
+                catch (err){
+                    console.log(err.stack)
+                    post_body = {
+                        ret_type: 'error',
+                        err_msg: err.stack
+                    }
+                    SendOutput(push_url, post_body, config);
+                }
+            }
+        )
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

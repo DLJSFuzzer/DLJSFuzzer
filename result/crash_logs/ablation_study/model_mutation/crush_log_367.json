@@ -1,0 +1,4 @@
+{
+  "model_inf": "from:0 to:1 operator:identity  from:0 to:4 operator:tanh  from:1 to:2 operator:identity  from:2 to:3 operator:identity  from:2 to:4 operator:leakyReLU  from:2 to:5 operator:ELU  from:3 to:4 operator:PReLU  from:3 to:8 operator:reducemean  from:4 to:5 operator:identity  from:5 to:6 operator:average_pooling2D  from:6 to:7 operator:identity  from:7 to:8 operator:leakyReLU  from:8 to:9 operator:identity  ",
+  "error_message": "Sizes of tensors must match except in dimension 1. Expected size 1 but got size 48 for tensor number 1 in the list."
+}

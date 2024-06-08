@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cf25a25f-6802-4ee9-8acb-80ad37b55f5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../DataStruct/generalDataGenerator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DataStruct/generalStructureGenerator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Method/Models/general_testnet_mindspore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Method/Models/general_testnet_pytorch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Method/Models/general_testnet_tensorflow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Method/general_model_executor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../model.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/HNAS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/HNAS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataStruct/globalConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataStruct/globalConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataStruct/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataStruct/worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database/db_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/db_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database/my_mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/my_mysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Method/Models/testnet_mindspore.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Method/Models/testnet_mindspore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Method/Models/testnet_pytorch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Method/Models/testnet_pytorch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Method/Models/testnet_tensorflow.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Method/Models/testnet_tensorflow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Method/calFitness.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Method/calFitness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Method/module_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Method/module_executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Method/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Method/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MUhvnF5pCZJfSd7kA2ZvweCqmF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf25a25f-6802-4ee9-8acb-80ad37b55f5f" name="Changes" comment="" />
+      <created>1677828306104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677828306104</updated>
+      <workItem from="1677828312898" duration="25000" />
+      <workItem from="1679043422716" duration="281000" />
+      <workItem from="1679045362575" duration="18000" />
+      <workItem from="1680419070230" duration="82000" />
+      <workItem from="1680535398429" duration="101000" />
+      <workItem from="1680940197897" duration="30000" />
+      <workItem from="1680940284938" duration="39000" />
+      <workItem from="1680940370714" duration="25000" />
+      <workItem from="1680941474029" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
