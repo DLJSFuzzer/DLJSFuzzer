@@ -98,7 +98,7 @@ The folder named  **dataset** is used for preprocessing the dataset. **DLJSFuzze
 Use the following command to run the experiment according to the configuration:
 
 ```shell
-python App.py
+python app.py
 python clear_helper.py
 python main.py
 ```
