@@ -119,3 +119,15 @@ python Gandalf_LEMON_edit_distance.py
 python Muffin_edit_distance.py
 python Muffin_structure.py
 ```
+
+**Confirmed crash analysis**
+
+|       root cause       | number | description                                                  |
+| :--------------------: | :----: | ------------------------------------------------------------ |
+|      cache reuse       |   5    | Three bugs originate from missing parameters during model execution. The bugs occur during cache reuse. Two bugs stem from tensor shape mismatches. The abnormal changes in tensor shape also occur during cache reuse. |
+|   implementation bug   |   4    | Two bugs originate from the imperfect handling of implicit type  conversion. Specifically, due to JavaScript's weak typing mechanism,  TensorFlow.js can create tensors without explicitly declaring their data types. TensorFlow.js is expected to perform implicit type conversion by detecting the actual data type of the tensor. However, in operators  like BatchNorm, if the tensor's data type is declared in advance, these  operators only support the default data type (e.g., float). This results in data type mismatches, leading to crashes. The other two bugs stem  from the lack of support for certain tensor data types (e.g., bfloat16)  in some operators like ReduceMean when running in a CPU environment. |
+| inference acceleration |   2    | These two bugs originate from the imperfect implementation of the  inference acceleration mechanism. Specifically, due to parameter  misalignment, the parameter settings in the accelerated model become  incorrect, leading to framework bugs. |
+|         Other          |   1    | This bug originates from garbled text resulting from encoding and  decoding in the browser. When TensorFlow.js transmits tensors to the  browser, they undergo various file formats. Multiple encodings and  decodings between these file formats cause the data to become garbled, making it fail in loading by the  model. |
+|         Total          |   12   | -                                                            |
+
+
